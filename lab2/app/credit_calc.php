@@ -146,10 +146,10 @@ $percentage = null;
 $result = null;
 $messages = array();
 
-getParams( $price, $time, $operation );
-if( validate( $price, $time, $operation, $messages ) ) 
+getParams( $price, $time, $percentage );
+if( validate( $price, $time, $percentage, $messages ) ) 
 { 
-	process( $price, $time, $operation, $messages, $result );
+	process( $price, $time, $percentage, $messages, $result );
 }
 
 // 5) Wywołanie widoku z przekazaniem zmiennych
