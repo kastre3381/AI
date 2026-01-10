@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /project/public/
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# /productShow/5  ->  index.php?action=productShow&id=5
+RewriteRule ^([A-Za-z0-9_]+)\/([0-9]+)\/?$ index.php?action=$1&id=$2 [L,QSA]
+
+# /productList -> index.php?action=productList
+RewriteRule ^([A-Za-z0-9_]+)\/?$ index.php?action=$1 [L,QSA]
